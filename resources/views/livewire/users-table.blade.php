@@ -41,21 +41,16 @@
                     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                         <tr class="dark:bg-gray-800 dark:text-white border dark:border-gray-700">
-                            <th scope="col" class="px-4 py-3">
-                                name
-                            </th>
-                            <th scope="col" class="px-4 py-3">
-                                email
-                            </th>
-                            <th scope="col" class="px-4 py-3">
-                                Role
-                            </th>
-                            <th scope="col" class="px-4 py-3">
-                                Joined
-                            </th>
-                            <th scope="col" class="px-4 py-3">
-                                Last update
-                            </th>
+                            <x-table-sortable-head name="name" displayName="Name" sortBy="{{ $sortBy }}"
+                                                   sortDir="{{ $sortDir }}"/>
+                            <x-table-sortable-head name="email" displayName="Email" sortBy="{{ $sortBy }}"
+                                                   sortDir="{{ $sortDir }}"/>
+                            <x-table-sortable-head name="is_admin" displayName="Role" sortBy="{{ $sortBy }}"
+                                                   sortDir="{{ $sortDir }}"/>
+                            <x-table-sortable-head name="created_at" displayName="Joined" sortBy="{{ $sortBy }}"
+                                                   sortDir="{{ $sortDir }}"/>
+                            <x-table-sortable-head name="updated_at" displayName="Last Updated" sortBy="{{ $sortBy }}"
+                                                   sortDir="{{ $sortDir }}"/>
                             <th scope="col" class="px-4 py-3">
                                 <span class="sr-only">
                                     Actions
