@@ -65,7 +65,7 @@
                         </thead>
                         <tbody>
                         @foreach($users as $user)
-                            <tr class="border-b dark:border-gray-700">
+                            <tr class="border-b dark:border-gray-700" wire:key="{{ $user->id }}">
                                 <th class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                                     scope="row">
                                     {{ $user->name }}
@@ -83,7 +83,9 @@
                                     {{ $user->updated_at }}
                                 </td>
                                 <td class="px-4 py-3 flex items-center justify-end">
-                                    <button class="px-3 py-1 bg-red-500 text-white rounded">
+                                    <button wire:confirm="Are you sure you want to delete {{ $user->name }}?"
+                                            wire:click="delete({{ $user->id }})"
+                                            class="px-3 py-1 bg-red-500 text-white rounded">
                                         X
                                     </button>
                                 </td>
